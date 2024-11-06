@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  front:
+    build:
+      context: ./front-end         # Build context (folder with Dockerfile)
+      dockerfile: Dockerfile           # Specify the Dockerfile
+      target:
+        development
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    networks:
+      - app-network
+  back:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+      target:
+        development
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
