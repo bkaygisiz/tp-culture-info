@@ -17,5 +17,4 @@
     "moduleDetection": "force"
   },
   "include": ["../front-end/src/**/*.ts", "../front-end/src/**/*.js", "../front-end/src/**/*.svelte"],
-  "references": [{ "path": "./tsconfig.node.json" }]
 }
