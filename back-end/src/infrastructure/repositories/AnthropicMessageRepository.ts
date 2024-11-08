@@ -1,7 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { ContentBlock } from "@anthropic-ai/sdk/resources";
+import { MessageRepository } from "../../domain/interfaces/MessageRepository";
 
-export class AnthropicMessageRepository {
+export class AnthropicMessageRepository implements MessageRepository {
   async sendMessage(message: string): Promise<string> {
     try {
       const anthropic = new Anthropic({
